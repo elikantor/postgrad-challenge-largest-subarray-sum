@@ -7,7 +7,7 @@ function largestSubarraySum(arr){
     
     while(i < arr.length){
         // console.log(largestSum, currentSum, tempSum, negatives)
-        if(arr[i]<0 && currentSum === 0){
+        while(arr[i]<0 && currentSum === 0){
             i++
         }
         currentSum += arr[i]
