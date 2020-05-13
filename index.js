@@ -7,7 +7,9 @@ function largestSubarraySum(arr){
     
     while(i < arr.length){
         // console.log(largestSum, currentSum, tempSum, negatives)
-        if(arr[i] < 0) continue
+        if(arr[i]<0 && currentSum === 0){
+            i++
+        }
         currentSum += arr[i]
         tempSum += arr[i]
         i++
@@ -37,7 +39,7 @@ function largestSubarraySum(arr){
     return largestSum
 }
 
-let array = [1, -1, 3, 3, -7, 4, 5, -100, 4]
+let array = [1, -1, 3, 3, -1, -2, -3, 4, 5, -100, 4]
 
 
 // all positive integers would be all elements
