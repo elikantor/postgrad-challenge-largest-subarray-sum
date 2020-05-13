@@ -11,12 +11,12 @@ function largestSubarraySum(arr){
         currentSum += arr[i]
         tempSum += arr[i]
         i++
-        while(arr[i] > 0){
+        while(arr[i] && arr[i] > 0){
             currentSum += arr[i]
             tempSum += arr[i]
             i++
         }
-        if(arr[i] < 0){
+        if(arr[i] < 0 || i === arr.length){
             let currentLargest = Math.max(tempSum, currentSum)
             largestSum = Math.max(largestSum, currentLargest)
         }
